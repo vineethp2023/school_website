@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="{% static 'js/boostrap.min.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
      <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
 </head>
@@ -22,7 +23,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      {% if profile == 'enabled' %}
+<!--      {% if profile == 'enabled' %}-->
         <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Result</a>
@@ -34,7 +35,7 @@
           <a class="nav-link active" aria-current="page" href="#">Messages</a>
         </li>
         </ul>
-      {% else %}
+<!--      {% else %}-->
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -42,20 +43,18 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'school_app:login' %}">Login</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Departments
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/English_Wikipedia">English</a></li>
-            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Commerce">Commerce</a></li>
-            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Computer_science">Computer Science</a></li>
-            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Mathematics">Maths</a></li>
-            <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Physics">Physics</a></li>
-          </ul>
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Departments</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/English_Wikipedia">English</a></li>
+              <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Commerce">Commerce</a></li>
+              <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Computer_science">Computer science</a></li>
+              <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Mathematics">Maths</a></li>
+                <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Physics">Physics</a></li>
+            </ul>
         </li>
       </ul>
-            {% endif %}
+<!--       {% endif %}-->
     </div>
   </div>
 </nav>
