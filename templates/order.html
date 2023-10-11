@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% block content %}
+<script>
+    window.addEventListener('load', addCourse);
+    function addCourse() {
+  // Get the department and course select boxes.
+  const deptSelect = document.querySelector('select[name="dept"]');
+  const courseSelect = document.querySelector('select[name="course"]');
+
+  // Clear the course select box.
+  courseSelect.length = 0;
+
+  // Add the appropriate course options to the select box based on the selected department.
+  switch (deptSelect.value) {
+    case 'Computer science':
+      courseSelect.options.add(new Option('BCA'));
+      courseSelect.options.add(new Option('BSc'));
+      courseSelect.options.add(new Option('BTech'));
+      break;
+    case 'Commerce':
+      courseSelect.options.add(new Option('BCom'));
+      courseSelect.options.add(new Option('BBA'));
+      courseSelect.options.add(new Option('PGDM'));
+      break;
+    case 'English':
+      courseSelect.options.add(new Option('BA'));
+      courseSelect.options.add(new Option('IELTS'));
+      courseSelect.options.add(new Option('OET'));
+      break;
+      case 'Mathematics':
+          courseSelect.options.add(new Option('Bsc'));
+          break;
+      case 'Physics':
+          courseSelect.options.add(new Option('Bsc'));
+          break;
+  }
+}
+function show_box() {
+  const boxes = document.querySelectorAll('.box');
+
+  for (const box of boxes) {
+    box.style.display = 'block';
+  }
+}
+</script>
+<div class="container">
+<p class="text-center">Enquiry</p>
+<div class="container-md">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Name</label>
+    <input type="text" class="form-control" name="name" placeholder="Your name here..">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput2" class="form-label">Date of birth</label>
+    <input type="date" class="form-control" name="dob" >
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput3" class="form-label">Age</label>
+    <input type="number" class="form-control" name="age" >
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput4" class="form-label">Age</label>&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="gender" id="male">Male&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio"  name="gender" id="female">Female&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio"  name="gender" id="Others">Others
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput5" class="form-label">Phone Number</label>
+    <input type="text" class="form-control" name="phone">
+  </div>
+   <div class="mb-3">
+    <label for="exampleFormControlInput6" class="form-label">E-Mail</label>
+    <input type="email" class="form-control" name="email">
+  </div>
+   <div class="mb-3">
+    <label for="exampleFormControlInput7" class="form-label">Address</label>
+     <textarea  class="form-control" name="address" rows="3"></textarea>
+  </div>
+   <div class="mb-3">
+    <label for="exampleFormControlInput8" class="form-label">Department</label>
+    <select class="form-control" name="dept" onchange="addCourse()">
+      <option value="English">English</option>
+      <option value="Commerce">Commerce</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="Mathematics">Mathematics</option>
+      <option value="Physics">Physics</option>
+    </select>
+  </div>
+   <div class="mb-3">
+    <label for="exampleFormControlInput9" class="form-label">Course</label>
+    <select class="form-control" name="course">
+     <!-- <option tag> -->
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput10" class="form-label">Purpose</label>
+    <select class="form-control" name="purpose">
+     <option value="enquiry">Enquiry</option>
+      <option value="order">Place order</option>
+      <option value="return">Return</option>
+    </select>
+  </div>
+   <div class="mb-3">
+    <label for="exampleFormControlInput11" class="form-label">Materials Provide</label>
+      <input type="checkbox" id="pen" value="pen" name="materials">PEN&nbsp;&nbsp;&nbsp;
+      <input type="checkbox" id="pencil" value="pencil" name="materials">PENCIL&nbsp;&nbsp;&nbsp;
+      <input type="checkbox" id="paper" value="paper" name="materials">PAPER&nbsp;&nbsp;&nbsp;
+      <input type="checkbox" id="notebook" value="notebook" name="materials">NOTE BOOK&nbsp;&nbsp;&nbsp;
+      <input type="checkbox" id="eraser" value="eraser" name="materials">ERASER
+  </div>
+  <div class="mb-3">
+      <input type="submit" class="btn btn-primary"  name="submit" value="submit" onclick="show_box()">
+  </div>
+</div>
+    <div class="box" style="display: none;">
+  <p>Request sent successfully!</p>
+        <a href="{% url 'school_app:home' %}"><button class="go-back-button">Go back</button></a>
+</div>
+</div>
+<br><br>
+{% endblock %}

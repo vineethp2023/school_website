@@ -1,0 +1,65 @@
+/* styles for base.html */
+.banner_class{
+    margin:0;
+    height:fit-content;
+    width:100%;
+}
+.banner_class img{
+    height: 200px;
+    width:100%;
+}
+#container_nav {
+  background-color:#0a53be;
+}
+#container_nav .nav-link{
+    color: white;
+}
+
+/* Styles for login.html and register.html */
+.text-center{
+    color: #0a53be;
+    font-size: 21pt;
+}
+.container-md{
+    width: 45%;
+    margin-top: 3%;
+    overflow-y: auto;
+}
+.container-md label{
+    font-weight: bold;
+    font-size: 14pt;
+    border-color: #0a53be;
+}
+/* footer.html styles */
+ footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background-color:#0a53be;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+      padding-top:12px;
+    }
+
+    /* order.html styles */
+.box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 150px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+.go-back-button {
+  margin-top: 10px;
+}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-md">
+    <p class="text-center">Login here</p>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" name="email" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+      <input type="password" class="form-control" name="password">
+    </div>
+  <div class="mb-3">
+      <a class="btn btn-primary" href="{% url 'school_app:profile' %}">Login</a>
+    </div>
+    <p>Don't have an account yet?<a href="{% url 'school_app:register' %}">click here</a>to login</p>
+</div>
+{% endblock %}

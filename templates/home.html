@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="container-md">
+    <h1>About US</h1>
+    <div class="row">
+        <div class="col-4">
+            <img class="card-img" src="{% static 'img/school.jpeg' %}">
+        </div>
+        <div class="col-8">
+            <p>The school's mission is to "inspire students to become lifelong learners and responsible citizens." To achieve this mission, the school offers a challenging academic program that emphasizes critical thinking, problem-solving, and creativity. The school also offers a variety of extracurricular activities and programs that help students develop their talents and interests.
+
+The school's faculty is composed of experienced and dedicated educators who are passionate about teaching. The faculty is committed to providing students with a supportive and nurturing learning environment.</p>
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="text-center">Principal Says Hi</h1>
+        <div class="col-8">
+            <p>Welcome to the ABC community! I am honored to serve as your principal this year.
+
+I am passionate about education and believe that all students deserve the opportunity to succeed. I am committed to providing our students with a rigorous and engaging academic program that will prepare them for college and beyond. I am also committed to creating a safe and supportive learning environment where all students feel valued and respected.</p>
+        </div>
+        <div class="col-4">
+            <img class="card-img-top" src="{% static 'img/principal.png' %}">
+        </div>
+    </div>
+</div>
+<br><br><br>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+</head>
+<body>
+    <div class="banner_class">
+        <img src="{% static 'img/banner.png' %}">
+    </div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid" id="container_nav">
+    {% if profile == 'enabled' %}
+    <a class="navbar-brand" href="{% url 'school_app:logout' %}">Logout</a>
+    {% else %}
+    <a class="navbar-brand" href="{% url 'school_app:home' %}">My School</a>
+    {% endif %}
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      {% if profile == 'enabled' %}
+        <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Result</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Time Table</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Messages</a>
+        </li>
+        </ul>
+      {% else %}
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'school_app:login' %}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown link
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+            {% endif %}
+    </div>
+  </div>
+</nav>
+{% block content %}
+{% endblock %}
+{% include 'footer.html' %}
+</body>
+</html>

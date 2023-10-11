@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<p class="text-center">Sign up</p>
+<div class="container-md">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="email" placeholder="name@example.com">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput2" class="form-label">Create password</label>
+    <input type="password" class="form-control" name="password" >
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput3" class="form-label">Confirm Password</label>
+    <input type="password" class="form-control" name="cpassword" >
+  </div>
+  <div class="mb-3">
+    <input type="submit" class="btn btn-success" name="submit" value="submit">
+  </div>
+</div>
+{% endblock %}
