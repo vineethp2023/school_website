@@ -2,6 +2,8 @@
 {% block content %}
 <p class="text-center">Sign up</p>
 <div class="container-md">
+  <form method="post" action="{% url 'school_app:login' %}">
+    {% csrf_token %}
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Email address</label>
     <input type="email" class="form-control" name="email" placeholder="name@example.com">
@@ -17,5 +19,6 @@
   <div class="mb-3">
     <input type="submit" class="btn btn-success" name="submit" value="submit">
   </div>
+  </form>
 </div>
 {% endblock %}
