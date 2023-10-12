@@ -14,6 +14,9 @@ def login(request):
         if password != cpassword:
             error = 'password and confirm password must be matched'
             return render(request,'register.html',{'error':error})
+        elif username == '' or password == '':
+            error = 'username or password should not be empty'
+            return render(request, 'register.html', {'error': error})
         else:
             user = User.objects.create(username=username,email=username,password=cpassword)
             msg = 'Account created successfully'

@@ -1,5 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
+<script>
+    // Get the msg variable from Django
+var msg = "{{ msg }}";
+
+// Check if the msg variable is empty
+if (msg.length > 0) {
+
+    // Create a new message box
+    var messageBox = document.createElement("div");
+    messageBox.className = "message-box";
+
+    // Set the message box content
+    messageBox.innerHTML = `
+        <div class="message-box-header">
+            Registration successful
+        </div>
+        <div class="message-box-body">
+            <p>Your registration was successful. Please click OK to continue.</p>
+        </div>
+        <div class="message-box-footer">
+            <button type="button" class="btn btn-primary" onclick="hideMessageBox()">OK</button>
+        </div>
+    `;
+
+    // Append the message box to the body of the document
+    document.body.appendChild(messageBox);
+
+    // Hide the message box when the OK button is clicked
+    function hideMessageBox() {
+        messageBox.style.display = "none";
+    }
+}
+</script>
 <div class="container-md">
     <p class="text-center">Login here</p>
     <form method="post" action="{% url 'school_app:profile' %}">
@@ -20,5 +53,8 @@
         <p style="color: red;">{{error}}</p>
         {% endif %}
     </form>
+    {% if msg %}
+        {{ message_box }}
+    {% endif %}
 </div>
 {% endblock %}
