@@ -37,7 +37,7 @@ def profile(request):
             return render(request,'login.html',{'error':error})
         else:
             user = User.objects.filter(username=username,password=password)
-            if user is not None:
+            if user is not None and user:
                 return render(request, 'profile.html', {'profile': 'enabled'})
             else:
                 error = 'Invalid username or password'
